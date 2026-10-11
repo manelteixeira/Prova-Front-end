@@ -1,26 +1,42 @@
 <!doctype html>
+<!-- Informa ao navegador que o documento utiliza HTML5. -->
+
 <html lang="pt-BR">
+  <!-- Define o idioma principal da página como português brasileiro. -->
+
   <head>
+    <!-- Define a codificação de caracteres, permitindo acentos e símbolos. -->
     <meta charset="UTF-8" />
+
+    <!-- Ajusta a página para a largura da tela do dispositivo. -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Define o título exibido na aba do navegador. -->
     <title>BYD Brasil</title>
 
+    <!-- Conecta o arquivo HTML ao arquivo de estilos CSS. -->
     <link rel="stylesheet" href="estilo.css" />
   </head>
+
   <body>
-    <!-- Cabeçalho e menu -->
+    <!-- Cabeçalho e menu de navegação. -->
     <header>
+      <!-- Barra superior com ícones e opção de idioma/região. -->
       <div class="barra-superior">
         <img src="img/fill.svg" alt="Pesquisar" />
         <img src="img/separacao.svg" alt="" />
         <img src="img/global.svg" alt="" />
         <span>Global</span>
       </div>
+
+      <!-- Área principal do cabeçalho, com logotipo e menu. -->
       <div class="cabecalho">
+        <!-- Logotipo clicável que leva ao início da página. -->
         <a href="#inicio" class="logo">
           <img src="./img/logo_byd.svg" alt="BYD" />
         </a>
+
+        <!-- Links de navegação para diferentes seções. -->
         <nav class="menu">
           <a href="#modelos">Modelos</a>
           <a href="#tecnologia">Tecnologia</a>
@@ -32,38 +48,37 @@
       </div>
     </header>
 
+    <!-- Conteúdo principal da página. -->
     <main>
-      <!-- Banner principal -->
-
+      <!-- Banner principal do site. -->
       <section id="inicio">
         <div class="banner">
+          <!-- Botão que representa a navegação para a imagem anterior. -->
           <button class="seta-esquerda" aria-label="Imagem anterior">
             <img src="./img/seta_esquerda.svg" alt="" />
           </button>
 
+          <!-- Imagem principal da campanha. -->
           <img
             src="img/banner_img.png"
             alt="Campanha BYD"
             class="banner-imagem"
           />
 
+          <!-- Botão que representa a navegação para a próxima imagem. -->
           <button class="seta-direita" aria-label="Próxima imagem">
             <img src="img/seta_direita.svg" alt="" />
           </button>
         </div>
       </section>
-
-      <section id="sobre" class="sobre">
-        <div class="sobre-conteudo">
-          <!-- Conteúdo da apresentação -->
-        </div>
-      </section>
-
+      <!-- Seção que apresenta o conceito de NEV e seus benefícios. -->
       <section id="historia" class="historia">
+        <!-- Introdução sobre os veículos de nova energia. -->
         <div class="nev-introducao">
           <h2>O que é NEV?</h2>
           <h3>NEV (New Energy Vehicles)</h3>
 
+          <!-- Explica o significado de NEV e apresenta o tema. -->
           <p>
             Nos últimos anos, os carros elétricos se tornaram populares, com
             mais deles aparecendo em nossas estradas. Normalmente, eles são
@@ -77,6 +92,7 @@
             de NEVs e os benefícios desses veículos.
           </p>
 
+          <!-- Subtítulo que introduz os benefícios dos NEVs. -->
           <h3>Benefícios dos NEV</h3>
           <p>
             Há uma série de benefícios dos NEVs, resultando que esses carros
@@ -84,6 +100,7 @@
           </p>
         </div>
 
+        <!-- Primeiro benefício: impacto ambiental. -->
         <div class="beneficio">
           <div class="beneficio-texto">
             <h3>Impacto ambiental:</h3>
@@ -96,12 +113,15 @@
             </p>
           </div>
 
+          <!-- Imagem que acompanha a explicação sobre o meio ambiente. -->
           <img
             src="img/Rectangle 10.svg"
             alt="Veículo BYD em ambiente natural"
           />
         </div>
 
+        <!-- Segundo benefício: eficiência energética.
+                 A classe beneficio-invertido identifica esta variação do bloco. -->
         <div class="beneficio beneficio-invertido">
           <div class="beneficio-texto">
             <h3>Eficiência energética:</h3>
@@ -114,9 +134,11 @@
             </p>
           </div>
 
+          <!-- Imagem relacionada à eficiência energética. -->
           <img src="img/Rectangle 11.png" alt="Veículo elétrico BYD" />
         </div>
 
+        <!-- Terceiro benefício: economia e manutenção. -->
         <div class="beneficio">
           <div class="beneficio-texto">
             <h3>Benefícios econômicos:</h3>
@@ -130,9 +152,11 @@
             </p>
           </div>
 
+          <!-- Imagem que acompanha os benefícios econômicos. -->
           <img src="img/Rectangle 12.png" alt="Veículos BYD" />
         </div>
 
+        <!-- Quarto benefício: tecnologia automotiva. -->
         <div class="beneficio beneficio-invertido">
           <div class="beneficio-texto">
             <h3>Tecnologia avançada:</h3>
@@ -146,17 +170,22 @@
             </p>
           </div>
 
+          <!-- Imagem relacionada à tecnologia dos veículos. -->
           <img src="img/Rectangle 13.png" alt="Tecnologia automotiva BYD" />
         </div>
       </section>
 
+      <!-- Seção que apresenta as ofertas e os modelos disponíveis. -->
       <section id="modelos" class="modelos">
+        <!-- Banner de apresentação das ofertas. -->
         <div class="banner-ofertas">
           <h2>Ofertas Exclusivas BYD</h2>
           <img src="img/Rectangle 14.png" alt="Ofertas de veículos BYD" />
         </div>
 
+        <!-- Lista de cartões dos veículos anunciados. -->
         <div class="lista-modelos">
+          <!-- Cartão de oferta do BYD Song Pro. -->
           <article class="card-modelo">
             <img src="img/Rectangle 16.png" alt="BYD Song Pro" />
             <h3>BYD SONG PRO GL FLEX 2027</h3>
@@ -166,6 +195,7 @@
             <button type="button">Estou Interessado</button>
           </article>
 
+          <!-- Cartão de oferta do BYD Atto 2. -->
           <article class="card-modelo">
             <img src="img/Rectangle 18.png" alt="BYD Atto 2" />
             <h3>BYD ATTO 2 GL 2027</h3>
@@ -175,6 +205,7 @@
             <button type="button">Estou Interessado</button>
           </article>
 
+          <!-- Cartão de oferta do BYD Dolphin Mini. -->
           <article class="card-modelo">
             <img src="img/Rectangle 20.png" alt="BYD Dolphin Mini" />
             <h3>BYD DOLPHIN MINI GL 2027</h3>
@@ -184,6 +215,7 @@
             <button type="button">Estou Interessado</button>
           </article>
 
+          <!-- Cartão de oferta do BYD King. -->
           <article class="card-modelo">
             <img src="img/Rectangle 22.png" alt="BYD King GL" />
             <h3>BYD KING GL 2027</h3>
@@ -195,13 +227,127 @@
         </div>
       </section>
 
-      <section id="interesse">
-        <!-- Formulário de interesse -->
+      <!-- Seção com o formulário de agendamento de test drive. -->
+      <section id="interesse" class="interesse">
+        <div class="formulario-container">
+          <h2>Agende um Teste Drive</h2>
+
+          <!-- Formulário com campos para selecionar o modelo e informar dados.
+                     A classe formulario-teste permite estilizar o formulário no CSS. -->
+          <form class="formulario-teste">
+            <!-- Campo de seleção do modelo desejado. -->
+            <div class="campo campo-modelo">
+              <label for="modelo">Modelo</label>
+              <select id="modelo" name="modelo" required>
+                <option value="">Selecione um Modelo</option>
+                <option value="BYD Song Pro">BYD Song Pro</option>
+                <option value="BYD Atto 2">BYD Atto 2</option>
+                <option value="BYD Dolphin Mini">BYD Dolphin Mini</option>
+                <option value="BYD King">BYD King</option>
+              </select>
+            </div>
+
+            <!-- Primeira linha de campos: nome e sobrenome. -->
+            <div class="campos-duplos">
+              <div class="campo">
+                <label for="nome">Nome*</label>
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Seu Nome"
+                  required
+                />
+              </div>
+
+              <div class="campo">
+                <label for="sobrenome">Sobrenome*</label>
+                <input
+                  id="sobrenome"
+                  name="sobrenome"
+                  type="text"
+                  placeholder="Seu Sobrenome"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Segunda linha de campos: CPF e telefone. -->
+            <div class="campos-duplos">
+              <div class="campo">
+                <label for="cpf">CPF*</label>
+                <input
+                  id="cpf"
+                  name="cpf"
+                  type="text"
+                  placeholder="Número"
+                  required
+                />
+              </div>
+
+              <div class="campo">
+                <label for="telefone">Telefone*</label>
+                <input
+                  id="telefone"
+                  name="telefone"
+                  type="tel"
+                  placeholder="Telefone"
+                  required
+                />
+              </div>
+            </div>
+
+            <!-- Terceira linha de campos: e-mail, CEP e endereço. -->
+            <div class="campos-triplos">
+              <div class="campo">
+                <label for="email">Email*</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+
+              <div class="campo">
+                <label for="cep">CEP*</label>
+                <input
+                  id="cep"
+                  name="cep"
+                  type="text"
+                  placeholder="CEP"
+                  required
+                />
+              </div>
+
+              <div class="campo">
+                <label for="endereco">Endereço*</label>
+                <input
+                  id="endereco"
+                  name="endereco"
+                  type="text"
+                  placeholder="Endereço"
+                  required
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <!-- Área com informações institucionais da BYD. -->
+        <div class="informacoes-byd">
+          <p>© 2026 BYD Brasil - Todos os direitos reservados.</p>
+
+          <p>
+            BYD do Brasil Ltda, com sede em Avenida Antonio Buscariol, 230,
+            Terminal Internacional de Cargas (TIC) em Campinas/SP, 13.069-905,
+            inscrita no CNPJ/MF sob nº 17.140.820/0002-62.
+          </p>
+
+          <p>Desacelere. Seu bem maior é a vida.</p>
+        </div>
       </section>
     </main>
-
-    <footer>
-      <!-- Rodapé -->
-    </footer>
   </body>
 </html>
