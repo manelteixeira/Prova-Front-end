@@ -1,40 +1,36 @@
-/* Importa a fonte Montserrat do Google Fonts, com diferentes pesos. */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 
-/* Aplica configurações básicas a todos os elementos da página. */
 * {
-  margin: 0; /* Remove a margem padrão. */
-  padding: 0; /* Remove o espaçamento interno padrão. */
-  box-sizing: border-box; /* Inclui bordas e padding no cálculo do tamanho. */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Define a fonte e a largura geral do documento. */
 body {
   font-family: "Montserrat", sans-serif;
   width: 100%;
 }
 
-/* Barra superior com fundo preto e conteúdo alinhado à direita. */
+/* Barra superior */
 .barra-superior {
   background-color: #000;
   color: #fff;
   height: 40px;
-  display: flex; /* Organiza os elementos em uma linha flexível. */
-  justify-content: flex-end; /* Encosta o conteúdo à direita. */
-  align-items: center; /* Centraliza os elementos verticalmente. */
-  gap: 5px; /* Espaço entre os elementos. */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 5px;
   padding: 0 10px;
   font-size: 8px;
 }
 
-/* Define o tamanho dos ícones da barra superior. */
 .barra-superior img {
   width: 10px;
   height: 10px;
-  object-fit: contain; /* Mantém a proporção da imagem dentro do espaço. */
+  object-fit: contain;
 }
 
-/* Cabeçalho com logotipo e menu de navegação. */
+/* Cabeçalho e menu */
 .cabecalho {
   display: flex;
   align-items: center;
@@ -44,64 +40,60 @@ body {
   height: 60px;
 }
 
-/* Define o tamanho do logotipo. */
 .logo img {
   display: block;
   width: 104px;
-  height: auto; /* Mantém a proporção original. */
+  height: auto;
 }
 
-/* Organiza os links do menu horizontalmente. */
 .menu {
   display: flex;
   align-items: center;
-  gap: 16px 20px; /* Espaçamentos entre os itens do menu. */
+  gap: 16px 20px;
 }
 
-/* Estiliza os links de navegação. */
 .menu a {
   color: #fff;
-  text-decoration: none; /* Remove o sublinhado dos links. */
+  text-decoration: none;
   font-size: 10px;
-  font-weight: 600; /* Define a espessura da fonte. */
-  white-space: nowrap; /* Evita que o texto quebre em várias linhas. */
+  font-weight: 600;
+  white-space: nowrap;
 }
 
-/* Banner principal: serve de referência para posicionar as setas. */
+/* Banner principal: usa Grid para sobrepor as setas à imagem. */
 .banner {
-  position: relative;
+  display: grid;
+  grid-template: 1fr / 1fr;
   width: 100%;
   max-width: 100%;
-  overflow: hidden; /* Esconde o conteúdo que ultrapassar os limites. */
+  overflow: hidden;
   background-color: #000;
 }
 
-/* Ajusta a imagem principal do banner. */
 .banner-imagem {
+  grid-area: 1 / 1;
   display: block;
   width: 100%;
   max-width: 100%;
   height: auto;
   min-width: 0;
+  z-index: 0;
 }
 
-/* Posiciona os botões de navegação sobre o banner. */
+/* Botões das setas: ficam na mesma célula da imagem e centralizados verticalmente. */
 .banner button {
-  position: absolute;
-  top: 50%; /* Posiciona os botões na metade vertical do banner. */
-  transform: translateY(
-    -50%
-  ); /* Centraliza os botões em relação ao próprio tamanho. */
+  grid-area: 1 / 1;
+  align-self: center;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
   border: none;
   padding: 8px;
-  cursor: pointer; /* Exibe o cursor de clique. */
+  cursor: pointer;
+  z-index: 1;
 }
 
-/* Define o tamanho das imagens usadas nas setas. */
 .banner button img {
   display: block;
   width: 30px;
@@ -109,72 +101,61 @@ body {
   object-fit: contain;
 }
 
-/* Posiciona a seta esquerda. */
 .seta-esquerda {
-  left: 20px;
+  justify-self: start;
+  margin-left: 20px;
 }
 
-/* Posiciona a seta direita. */
 .seta-direita {
-  right: 20px;
+  justify-self: end;
+  margin-right: 20px;
 }
+/* NEV E BENEFÍCIOS */
 
-/* ============================= */
-/* SEÇÃO NEV E BENEFÍCIOS        */
-/* ============================= */
-
-/* Define a área e o espaçamento da seção de benefícios. */
 .historia {
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto; /* Centraliza a seção horizontalmente. */
+  margin: 0 auto;
   padding: 25px 18px;
   background: #fff;
   color: #111;
 }
 
-/* Centraliza a introdução sobre os NEVs. */
 .nev-introducao {
   text-align: center;
   margin-bottom: 18px;
 }
 
-/* Estiliza o título principal da introdução. */
 .nev-introducao h2 {
   font-size: 22px;
   margin-bottom: 2px;
 }
 
-/* Estiliza os subtítulos da introdução. */
 .nev-introducao h3 {
   font-size: 16px;
   margin-bottom: 10px;
 }
 
-/* Formata os parágrafos da introdução. */
 .nev-introducao p {
   font-size: 10px;
-  line-height: 1.5; /* Controla a altura das linhas do texto. */
+  line-height: 1.5;
   margin-bottom: 16px;
 }
 
-/* Organiza cada benefício com texto e imagem lado a lado. */
 .beneficio {
   display: flex;
-  align-items: center; /* Alinha verticalmente texto e imagem. */
+  align-items: center;
   gap: 24px;
   margin: 12px 0;
 }
 
-/* Define o espaço e o alinhamento do texto de cada benefício. */
 .beneficio-texto {
-  flex: 1; /* Permite que o texto ocupe o espaço disponível. */
+  flex: 1;
   min-width: 0;
   text-align: center;
   transform: none;
 }
 
-/* Estiliza os títulos dos benefícios. */
 .beneficio-texto h3 {
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
@@ -184,7 +165,6 @@ body {
   color: #000;
 }
 
-/* Estiliza os parágrafos dos benefícios. */
 .beneficio-texto p {
   width: 100%;
   height: auto;
@@ -195,107 +175,94 @@ body {
   color: #000;
 }
 
-/* Ajusta as imagens que acompanham os benefícios. */
 .beneficio img {
-  width: calc(
-    50% - 12px
-  ); /* Reserva aproximadamente metade do espaço para a imagem. */
+  width: calc(50% - 12px);
   height: auto;
-  aspect-ratio: 650 / 300.364; /* Define a proporção da imagem. */
-  object-fit: cover; /* Preenche a área sem distorcer a imagem. */
-  flex-shrink: 0; /* Impede que a imagem encolha dentro do flex. */
+  aspect-ratio: 650 / 300.364;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 
-/* Inverte a ordem visual dos elementos deste benefício. */
 .beneficio-invertido {
   flex-direction: row-reverse;
 }
 
-/* ============================= */
-/* OFERTAS BYD                   */
-/* ============================= */
-
-/* Define o fundo e o espaçamento da seção de modelos. */
+/* OFERTAS BYD */
 .modelos {
   width: 100%;
   background-color: #b9d5df;
   padding-bottom: 12px;
 }
 
-/* Cria a área de referência para o título sobre a imagem de ofertas. */
 .banner-ofertas {
-  position: relative;
+  display: grid;
+  grid-template: 1fr / 1fr;
   width: 100%;
   height: auto;
 }
 
-/* Faz a imagem de ofertas ocupar a largura disponível. */
 .banner-ofertas img {
+  grid-area: 1 / 1;
   display: block;
   width: 100%;
   height: auto;
+  z-index: 0;
 }
 
-/* Posiciona e estiliza o título sobre o banner de ofertas. */
 .banner-ofertas h2 {
-  position: absolute;
-  top: 4px;
-  left: 32px;
-  z-index: 1; /* Mantém o título acima da imagem. */
+  grid-area: 1 / 1;
+  align-self: start;
+  justify-self: start;
+  margin: 4px 0 0 32px;
+  z-index: 1;
   font-family: "Montserrat", sans-serif;
   font-size: 22px;
   font-weight: 700;
   color: #000;
 }
 
-/* Organiza os cartões de modelos em uma linha. */
 .lista-modelos {
   display: flex;
-  justify-content: center; /* Centraliza os cartões no espaço disponível. */
+  justify-content: center;
   gap: 8px;
   padding: 12px 4.7%;
 }
 
-/* Estrutura visual de cada cartão de veículo. */
 .card-modelo {
-  flex: 1; /* Divide o espaço disponível entre os cartões. */
+  flex: 1;
   min-width: 0;
   background-color: #fff;
-  border-radius: 12px; /* Arredonda os cantos do cartão. */
+  border-radius: 12px;
   padding: 7px;
   display: flex;
-  flex-direction: column; /* Empilha os elementos verticalmente. */
+  flex-direction: column;
   align-items: flex-start;
   gap: 6px;
   font-family: "Montserrat", sans-serif;
 }
 
-/* Formata a imagem dentro de cada cartão. */
 .card-modelo > img {
   width: 100%;
   height: auto;
   aspect-ratio: 1.5 / 1;
-  object-fit: contain; /* Mantém a imagem inteira visível. */
+  object-fit: contain;
   background-color: #ccc;
   border-radius: 8px;
 }
 
-/* Define o tamanho e o espaçamento dos títulos dos cartões. */
 .card-modelo h3 {
   font-size: 10px;
   line-height: 1.3;
 }
 
-/* Formata os textos e preços dos cartões. */
 .card-modelo p {
   font-size: 8px;
   line-height: 1.3;
 }
 
-/* Estiliza o botão de interesse em cada oferta. */
 .card-modelo button {
-  align-self: center; /* Centraliza o botão horizontalmente. */
-  margin-top: auto; /* Empurra o botão para o final do cartão. */
+  align-self: center;
+  margin-top: auto;
   padding: 4px 8px;
   background-color: #fff;
   border: 1px solid #1683b5;
@@ -304,47 +271,39 @@ body {
   cursor: pointer;
 }
 
-/* ============================= */
-/* FORMULÁRIO E RODAPÉ BYD       */
-/* ============================= */
-
-/* Define o fundo e a organização da área final da página. */
+/* FORMULÁRIO E RODAPÉ BYD */
 .interesse {
   width: 100%;
   padding: 30px 5%;
-  background-image: url("img/bg_footer.png"); /* Imagem de fundo da seção. */
-  background-size: cover; /* Faz a imagem cobrir toda a área. */
-  background-position: center; /* Centraliza a imagem de fundo. */
-  background-repeat: no-repeat; /* Evita repetir a imagem. */
+  background-image: url("img/bg_footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
-  flex-wrap: wrap; /* Permite que os elementos passem para outra linha. */
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   gap: 24px;
   color: #000;
 }
 
-/* Define a área ocupada pelo título e pelo formulário. */
 .formulario-container {
   flex: 1 1 65%;
   min-width: 0;
 }
 
-/* Estiliza o título do formulário. */
 .formulario-container h2 {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 18px;
 }
 
-/* Organiza os campos do formulário em uma coluna. */
 .formulario-teste {
   display: flex;
   flex-direction: column;
-  gap: 14px; /* Espaço entre as linhas de campos. */
+  gap: 14px;
 }
 
-/* Organiza cada campo com o rótulo acima do controle. */
 .campo {
   display: flex;
   flex-direction: column;
@@ -352,13 +311,11 @@ body {
   min-width: 0;
 }
 
-/* Estiliza os rótulos dos campos. */
 .campo label {
   font-size: 11px;
   font-weight: 600;
 }
 
-/* Aplica os mesmos estilos aos campos de texto e à lista de seleção. */
 .campo input,
 .campo select {
   width: 100%;
@@ -372,21 +329,18 @@ body {
   font-size: 11px;
 }
 
-/* Distribui dois campos em colunas de mesma proporção. */
 .campos-duplos {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
 }
 
-/* Distribui três campos em colunas de mesma proporção. */
 .campos-triplos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 
-/* Estiliza as informações institucionais no final da página. */
 .informacoes-byd {
   flex: 1 1 25%;
   min-width: 180px;
@@ -398,7 +352,6 @@ body {
   line-height: 1.5;
 }
 
-/* Define o espaço abaixo de cada parágrafo institucional. */
 .informacoes-byd p {
   margin-bottom: 12px;
 }
