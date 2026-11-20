@@ -52,12 +52,26 @@ body {
   gap: 16px 20px;
 }
 
-.menu a {
+.menu a,
+.menu span {
   color: #fff;
   text-decoration: none;
   font-size: 10px;
   font-weight: 600;
   white-space: nowrap;
+}
+
+.menu a {
+  transition: color 0.2s ease;
+}
+
+.menu a:hover {
+  color: #00a8e8;
+}
+
+.menu a:focus-visible {
+  outline: 2px solid #00a8e8;
+  outline-offset: 4px;
 }
 
 /* Banner principal: usa Grid para sobrepor as setas à imagem. */
