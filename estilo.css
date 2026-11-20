@@ -355,3 +355,267 @@ body {
 .informacoes-byd p {
   margin-bottom: 12px;
 }
+
+
+/* MENU HAMBURGER E AJUSTES RESPONSIVOS */
+.botao-menu {
+  display: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.botao-menu span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* CONFIGURADOR SEALION 7 */
+.configurador {
+  display: grid;
+  grid-template-columns: minmax(0, 3fr) minmax(300px, 1fr);
+  min-height: 520px;
+  background: #f4f4f4;
+  color: #111;
+}
+
+.configurador-imagem {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  background: #c9c9c9;
+}
+
+.configurador-imagem > img {
+  display: block;
+  width: 100%;
+  max-height: 620px;
+  object-fit: contain;
+}
+
+.config-seta {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #555;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.config-anterior { left: 12px; }
+.config-proxima { right: 12px; }
+
+.configurador-opcoes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 42px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.configurador-opcoes h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.configurador-modelo {
+  width: 100%;
+  padding: 14px;
+  background: #252728;
+  color: #fff;
+  font-size: 14px;
+  margin-bottom: 48px;
+}
+
+.configurador-opcoes h3 {
+  font-size: 20px;
+  margin-bottom: 26px;
+}
+
+.config-abas {
+  display: flex;
+  width: 100%;
+  border: 1px solid #555;
+}
+
+.aba-config {
+  flex: 1;
+  padding: 10px 4px;
+  border: 0;
+  background: #fff;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+.aba-config.ativa {
+  background: #252728;
+  color: #fff;
+}
+
+.nome-opcao {
+  margin: 28px 0 20px;
+  font-size: 14px;
+}
+
+.opcoes-carro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 28px;
+  min-height: 48px;
+}
+
+.opcao-cor {
+  width: 42px;
+  height: 42px;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  background: linear-gradient(#aaa, #666);
+  cursor: pointer;
+}
+
+.opcao-cor.selecionada {
+  outline: 2px solid #777;
+  outline-offset: 3px;
+}
+
+.opcao-cor.cor-preta { background: linear-gradient(#30343a, #050609); }
+.opcao-cor.cor-branca { background: linear-gradient(#fff, #c9c9c9); }
+
+.preco-config {
+  margin-top: auto;
+  padding: 42px 0 28px;
+  font-size: 14px;
+}
+
+.preco-config strong {
+  display: block;
+  font-size: 22px;
+  margin-top: 6px;
+}
+
+.botao-interesse {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #888;
+  color: #222;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* Ajustes para tablets e celulares */
+@media (max-width: 900px) {
+  .cabecalho {
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .botao-menu { display: block; }
+
+  .menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 8px 18px;
+    background: #252728;
+  }
+
+  .menu.aberto { display: flex; }
+
+  .menu a {
+    width: 100%;
+    padding: 13px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #444;
+  }
+
+  .configurador {
+    grid-template-columns: 1fr;
+  }
+
+  .configurador-imagem > img {
+    max-height: 430px;
+  }
+
+  .configurador-opcoes {
+    padding: 30px 22px;
+  }
+
+  .configurador-modelo { margin-bottom: 28px; }
+}
+
+@media (max-width: 600px) {
+  .barra-superior { height: 30px; }
+  .cabecalho { height: 56px; }
+  .menu { top: 56px; }
+
+  .banner button img {
+    width: 22px;
+    height: 22px;
+  }
+
+  .seta-esquerda { margin-left: 4px; }
+  .seta-direita { margin-right: 4px; }
+
+  .historia { padding: 22px 14px; }
+  .beneficio,
+  .beneficio-invertido {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .beneficio img {
+    width: 100%;
+  }
+
+  .lista-modelos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 12px;
+  }
+
+  .banner-ofertas h2 {
+    margin-left: 14px;
+    font-size: 16px;
+  }
+
+  .interesse {
+    padding: 24px 14px;
+  }
+
+  .campos-duplos,
+  .campos-triplos {
+    grid-template-columns: 1fr;
+  }
+
+  .informacoes-byd {
+    min-width: 100%;
+    text-align: left;
+  }
+
+  .configurador-imagem > img {
+    max-height: 280px;
+  }
+
+  .configurador-opcoes h2 { font-size: 19px; }
+}
