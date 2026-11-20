@@ -38,6 +38,13 @@
           <img src="./img/logo_byd.svg" alt="BYD" />
         </a>
 
+        <!-- Botão que abre e fecha o menu em telas menores. -->
+        <button class="botao-menu" type="button" aria-label="Abrir menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
         <!-- Links de navegação para diferentes seções. -->
         <nav class="menu">
           <a href="#modelos">Modelos</a>
@@ -229,6 +236,37 @@
         </div>
       </section>
 
+      <!-- Configurador interativo do BYD Sealion 7. -->
+      <section id="configurador" class="configurador">
+        <div class="configurador-imagem">
+          <img id="imagem-carro" src="img/sealion7-rosemary-grey-mob.jpeg" alt="BYD Sealion 7 na cor Rosemary Grey" />
+          <button class="config-seta config-anterior" type="button" aria-label="Imagem anterior">&#10094;</button>
+          <button class="config-seta config-proxima" type="button" aria-label="Próxima imagem">&#10095;</button>
+        </div>
+
+        <div class="configurador-opcoes">
+          <h2>BYD SEALION 7 EV</h2>
+          <p class="configurador-modelo">BYD SEALION 7 EV</p>
+          <h3>Configure o seu BYD</h3>
+
+          <div class="config-abas">
+            <button type="button" class="aba-config ativa" data-tipo="cores">Cores</button>
+            <button type="button" class="aba-config" data-tipo="interior">Interior</button>
+            <button type="button" class="aba-config" data-tipo="rodas">Rodas</button>
+          </div>
+
+          <p id="nome-opcao" class="nome-opcao">Rosemary Grey</p>
+          <div id="opcoes-carro" class="opcoes-carro">
+            <button type="button" class="opcao-cor selecionada" data-imagem="sealion7-rosemary-grey-mob.jpeg" data-nome="Rosemary Grey" aria-label="Rosemary Grey"></button>
+            <button type="button" class="opcao-cor cor-preta" data-imagem="sealion7-cosmos-black-pc.jpeg" data-nome="Cosmos Black" aria-label="Cosmos Black"></button>
+            <button type="button" class="opcao-cor cor-branca" data-imagem="sealion7-bright-white-mob.jpeg" data-nome="Bright White" aria-label="Bright White"></button>
+          </div>
+
+          <p class="preco-config">Preço de venda <strong>R$ 339.990,00</strong></p>
+          <a class="botao-interesse" href="#interesse">Garanta o seu</a>
+        </div>
+      </section>
+
       <!-- Seção com o formulário de agendamento de test drive. -->
       <section id="interesse" class="interesse">
         <div class="formulario-container">
@@ -334,6 +372,33 @@
                 />
               </div>
             </div>
+
+            <!-- Listas dependentes: a cidade depende do estado e a concessionária depende da cidade. -->
+            <div class="campos-triplos campos-localizacao">
+              <div class="campo">
+                <label for="estado">Estado*</label>
+                <select id="estado" name="estado" required>
+                  <option value="">Selecione o estado</option>
+                  <option value="BA">Bahia</option>
+                  <option value="SP">São Paulo</option>
+                  <option value="RJ">Rio de Janeiro</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="cidade">Cidade*</label>
+                <select id="cidade" name="cidade" required disabled>
+                  <option value="">Selecione primeiro o estado</option>
+                </select>
+              </div>
+
+              <div class="campo">
+                <label for="concessionaria">Concessionária*</label>
+                <select id="concessionaria" name="concessionaria" required disabled>
+                  <option value="">Selecione primeiro a cidade</option>
+                </select>
+              </div>
+            </div>
           </form>
         </div>
 
@@ -351,5 +416,6 @@
         </div>
       </section>
     </main>
+    <script src="script.js"></script>
   </body>
 </html>
