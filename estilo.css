@@ -619,3 +619,22 @@ body {
 
   .configurador-opcoes h2 { font-size: 19px; }
 }
+
+/* Opções visuais do interior e das rodas no configurador */
+.opcao-visual {
+  min-width: 110px;
+  min-height: 48px;
+  padding: 10px 14px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  background: #f4f4f4;
+  color: #222;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.opcao-visual.selecionada {
+  border: 2px solid #252728;
+  background: #e5e5e5;
+}
