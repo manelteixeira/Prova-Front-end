@@ -67,9 +67,9 @@ const opcoesCarro = document.getElementById("opcoes-carro");
 const abasConfig = document.querySelectorAll(".aba-config");
 
 const imagensCores = [
-  { imagem: "img/sealion7-rosemary-grey-mob.jpeg", nome: "Rosemary Grey" },
-  { imagem: "img/sealion7-cosmos-black-pc.jpeg", nome: "Cosmos Black" },
-  { imagem: "img/sealion7-bright-white-mob.jpeg", nome: "Bright White" }
+  { imagem: "img/sealion7-rosemary-grey-mob.jpeg", nome: "Rosemary Grey", classe: "cor-cinza" },
+  { imagem: "img/sealion7-cosmos-black-pc.jpeg", nome: "Cosmos Black", classe: "cor-preta" },
+  { imagem: "img/sealion7-bright-white-mob.jpeg", nome: "Bright White", classe: "cor-branca" }
 ];
 
 const imagensInterior = [
@@ -83,39 +83,64 @@ const imagensRodas = [
 let tipoAtual = "cores";
 let indiceOpcao = 0;
 
-function mostrarOpcoes(tipo) {
-  let listaImagens = imagensCores;
-
-  if (tipo === "interior") {
-    listaImagens = imagensInterior;
-  } else if (tipo === "rodas") {
-    listaImagens = imagensRodas;
+function obterListaAtual() {
+  if (tipoAtual === "interior") {
+    return imagensInterior;
   }
 
+  if (tipoAtual === "rodas") {
+    return imagensRodas;
+  }
+
+  return imagensCores;
+}
+
+function atualizarConfigurador() {
+  const lista = obterListaAtual();
+  const opcaoAtual = lista[indiceOpcao];
+
+  imagemCarro.src = opcaoAtual.imagem;
+  imagemCarro.alt = "BYD Sealion 7 - " + opcaoAtual.nome;
+  nomeOpcao.textContent = opcaoAtual.nome;
+
+  const botoes = opcoesCarro.querySelectorAll("button");
+
+  for (let i = 0; i < botoes.length; i++) {
+    botoes[i].classList.remove("selecionada");
+
+    if (i === indiceOpcao) {
+      botoes[i].classList.add("selecionada");
+    }
+  }
+}
+
+function mostrarOpcoes() {
+  const lista = obterListaAtual();
   opcoesCarro.innerHTML = "";
 
-  for (let i = 0; i < listaImagens.length; i++) {
+  for (let i = 0; i < lista.length; i++) {
     const botao = document.createElement("button");
     botao.type = "button";
-    botao.className = "opcao-cor";
-    botao.textContent = listaImagens[i].nome;
-    botao.style.width = "auto";
-    botao.style.height = "auto";
-    botao.style.padding = "8px 12px";
-    botao.style.borderRadius = "4px";
+
+    if (tipoAtual === "cores") {
+      botao.className = "opcao-cor " + lista[i].classe;
+      botao.setAttribute("aria-label", lista[i].nome);
+      botao.title = lista[i].nome;
+    } else {
+      botao.className = "opcao-visual";
+      botao.textContent = lista[i].nome;
+    }
 
     botao.addEventListener("click", function () {
       indiceOpcao = i;
-      imagemCarro.src = listaImagens[i].imagem;
-      nomeOpcao.textContent = listaImagens[i].nome;
+      atualizarConfigurador();
     });
 
     opcoesCarro.appendChild(botao);
   }
 
   indiceOpcao = 0;
-  imagemCarro.src = listaImagens[0].imagem;
-  nomeOpcao.textContent = listaImagens[0].nome;
+  atualizarConfigurador();
 }
 
 for (let i = 0; i < abasConfig.length; i++) {
@@ -126,47 +151,33 @@ for (let i = 0; i < abasConfig.length; i++) {
 
     abasConfig[i].classList.add("ativa");
     tipoAtual = abasConfig[i].getAttribute("data-tipo");
-    mostrarOpcoes(tipoAtual);
-  });
-}
-
-const botoesCor = document.querySelectorAll(".opcao-cor");
-
-for (let i = 0; i < botoesCor.length; i++) {
-  botoesCor[i].addEventListener("click", function () {
-    for (let j = 0; j < botoesCor.length; j++) {
-      botoesCor[j].classList.remove("selecionada");
-    }
-
-    botoesCor[i].classList.add("selecionada");
-    imagemCarro.src = botoesCor[i].getAttribute("data-imagem");
-    nomeOpcao.textContent = botoesCor[i].getAttribute("data-nome");
+    mostrarOpcoes();
   });
 }
 
 document.querySelector(".config-anterior").addEventListener("click", function () {
-  const lista = tipoAtual === "interior" ? imagensInterior : tipoAtual === "rodas" ? imagensRodas : imagensCores;
+  const lista = obterListaAtual();
   indiceOpcao = indiceOpcao - 1;
 
   if (indiceOpcao < 0) {
     indiceOpcao = lista.length - 1;
   }
 
-  imagemCarro.src = lista[indiceOpcao].imagem;
-  nomeOpcao.textContent = lista[indiceOpcao].nome;
+  atualizarConfigurador();
 });
 
 document.querySelector(".config-proxima").addEventListener("click", function () {
-  const lista = tipoAtual === "interior" ? imagensInterior : tipoAtual === "rodas" ? imagensRodas : imagensCores;
+  const lista = obterListaAtual();
   indiceOpcao = indiceOpcao + 1;
 
   if (indiceOpcao >= lista.length) {
     indiceOpcao = 0;
   }
 
-  imagemCarro.src = lista[indiceOpcao].imagem;
-  nomeOpcao.textContent = lista[indiceOpcao].nome;
+  atualizarConfigurador();
 });
+
+mostrarOpcoes();
 
 // LISTAS DEPENDENTES: ESTADO, CIDADE E CONCESSIONARIA
 const cidadesPorEstado = {
